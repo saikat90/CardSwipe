@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CardSwipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GqM-Wo-1vT">
+                                <rect key="frame" x="0.0" y="20" width="375" height="54"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5Y-vv-Aun">
+                                        <rect key="frame" x="10" y="12" width="106" height="30"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                        <state key="normal" title="Interested Book">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2x4-HQ-LVN">
+                                        <rect key="frame" x="322" y="12" width="38" height="30"/>
+                                        <state key="normal" title="Undo">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="undoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bir-LK-2U3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="GaI-SB-go8"/>
+                                    <constraint firstItem="2x4-HQ-LVN" firstAttribute="centerY" secondItem="GqM-Wo-1vT" secondAttribute="centerY" id="ML2-f5-VZx"/>
+                                    <constraint firstItem="j5Y-vv-Aun" firstAttribute="centerY" secondItem="GqM-Wo-1vT" secondAttribute="centerY" id="QxH-AW-nty"/>
+                                    <constraint firstItem="j5Y-vv-Aun" firstAttribute="leading" secondItem="GqM-Wo-1vT" secondAttribute="leading" constant="10" id="lMx-D4-O2o"/>
+                                    <constraint firstAttribute="trailing" secondItem="2x4-HQ-LVN" secondAttribute="trailing" constant="15" id="vrs-97-8LW"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JIp-2p-ekm" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="10" y="116.5" width="355" height="434.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9Nl-eK-rJP">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XP-Zw-Aea">
+                                <rect key="frame" x="154.5" y="354" width="66" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Nl-eK-rJP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2OW-k5-pbh"/>
+                            <constraint firstItem="JIp-2p-ekm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3hl-K5-dsd"/>
+                            <constraint firstItem="GqM-Wo-1vT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EJs-xP-KWc"/>
+                            <constraint firstAttribute="trailing" secondItem="JIp-2p-ekm" secondAttribute="trailing" constant="10" id="Fkw-gg-9UU"/>
+                            <constraint firstItem="JIp-2p-ekm" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.65" constant="1" id="QBT-WR-kFL"/>
+                            <constraint firstItem="JIp-2p-ekm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="R43-zZ-V9T"/>
+                            <constraint firstItem="3XP-Zw-Aea" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YCt-50-xP9"/>
+                            <constraint firstAttribute="trailing" secondItem="GqM-Wo-1vT" secondAttribute="trailing" id="atz-kv-C8M"/>
+                            <constraint firstItem="GqM-Wo-1vT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="hB5-qC-5D6"/>
+                            <constraint firstItem="9Nl-eK-rJP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lIO-gT-piX"/>
+                            <constraint firstItem="3XP-Zw-Aea" firstAttribute="top" secondItem="9Nl-eK-rJP" secondAttribute="bottom" constant="2" id="zu1-Bd-zPK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="9Nl-eK-rJP" id="mGY-jq-zgw"/>
+                        <outlet property="cardView" destination="JIp-2p-ekm" id="fW0-Wn-ZP4"/>
+                        <outlet property="loadingLabel" destination="3XP-Zw-Aea" id="Wd8-dK-1PJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+</document>
